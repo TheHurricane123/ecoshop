@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERO PASAL</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('.search-input');
+            const boxes = document.querySelectorAll('.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12');
+            const container = document.querySelector('.boxgod'); // Ensure all boxes are within this container
+
+            searchInput.addEventListener('input', function () {
+                const query = searchInput.value.toLowerCase();
+
+                boxes.forEach(function (box) {
+                    const genre = box.getAttribute('data-genre').toLowerCase();
+
+                    if (genre.includes(query)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                });
+
+
+            });
+
+
+
+        });
+
+
+
+
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .tauko {
+            height: 60px;
+            display: flex;
+            background-color: rgb(162, 204, 230);
+            align-items: center;
+            position: relative;
+        }
+
+        .cart {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart_name {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px;
+            margin-left: 1px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+            margin-left: 60px;
+            position: relative;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding-bottom: 5px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            /* font-weight: bold; */
+            position: relative;
+        }
+
+
+        .nav a:hover,
+        #underline {
+            border-bottom: 1px solid #a41b22;
+        }
+
+        .nav .dropdown {
+            position: absolute;
+            top: 100%;
+            background-color: #bde3e3;
+            border: 1px solid #ddd;
+            width: 200px;
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            /*for overlapping*/
+
+        }
+
+        .nav .dropdown a {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #454545;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav .dropdown a:last-child {
+            border-bottom: n1px solid #454545;
+        }
+
+        .nav .dropdown a:hover {
+            background-color: #7fecd7;
+        }
+
+        .nav .categories:hover .dropdown {
+            display: flex;
+        }
+
+        .search {
+            position: absolute;
+            right: 103px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            height: 33px;
+            width: 290px;
+            border: none;
+            font-size: 16px;
+            padding-top: 1.3%;
+            border-radius: 6px;
+            padding-left: 40px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .search input:focus {
+            border: 2px solid rgb(109, 65, 214);
+        }
+
+        .search img {
+            position: absolute;
+            left: 10px;
+            height: 16px;
+            width: 16px;
+        }
+
+        .sign-in-button {
+            position: absolute;
+            top: 23%;
+            right: 7px;
+            background-color: #eb7b47;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        .sign-in-button:hover {
+            background-color: #a25e3e;
+        }
+
+        .box1 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 18px;
+            width: 23vw;
+            top: 80px;
+            display: flex;
+        }
+
+        .bagimg {
+            height: 200px;
+            width: 120px;
+            position: absolute;
+            left: 60px;
+            /* overflow: visible   ; */
+            top: 15px;
+        }
+
+        .genre {
+            border: none;
+            font-size: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #ffffff;
+            background-color: #ff8f07;
+            position: absolute;
+            bottom: 205px;
+            height: 20px;
+            border-radius: 6px;
+            width: auto;
+            max-width: 150px;
+            padding: 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 15px;
+        }
+
+
+        .genre:hover {
+            background-color: #b73e06;
+            cursor: pointer;
+        }
+
+        .box1 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box1 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .bagcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .buy-button {
+            position: absolute;
+            bottom: 23px;
+            right: 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .box2 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 25.9vw;
+            width: 23vw;
+            top: 80px;
+            display: flex;
+
+
+        }
+
+        .watchimg {
+            height: 200px;
+            width: 190px;
+            position: absolute;
+            left: 60px;
+            /* overflow: visible   ; */
+            top: 10px;
+        }
+
+        .box2 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box2 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .watchcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box3 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 50.4vw;
+            width: 23vw;
+            top: 80px;
+            display: flex;
+        }
+
+        .box3 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box3 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .lappyimg {
+            height: 195px;
+            width: 260px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .lappycost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box4 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 75vw;
+            width: 23vw;
+            top: 80px;
+            display: flex;
+        }
+
+
+        .kattuimg {
+            height: 195px;
+            width: 260px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .kattucost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box4 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box4 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+
+        .box5 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 18px;
+            width: 23vw;
+            top: 86vh;
+            display: flex;
+        }
+
+        .box5 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box5 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .tshirtimg {
+            height: 205px;
+            width: 240px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .tshirtcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+
+
+
+        .box6 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 25.9vw;
+            width: 23vw;
+            top: 86vh;
+            display: flex;
+        }
+
+
+        .box6 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box6 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .keyboardimg {
+            height: 195px;
+            width: 260px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .keyboardcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+
+        .box7 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 50.4vw;
+            width: 23vw;
+            top: 86vh;
+            display: flex;
+        }
+
+        .box7 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box7 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .cricketbatimg {
+            height: 190px;
+            width: 230px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .cricketbatcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+
+        .box8 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 75vw;
+            width: 23vw;
+            top: 86vh;
+            display: flex;
+        }
+
+        .box8 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box8 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .footballimg {
+            height: 195px;
+            width: 205px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .footballcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box9 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 18px;
+            width: 23vw;
+            top: 160vh;
+            display: flex;
+        }
+
+        .box9 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box9 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .mouseimg {
+            height: 195px;
+            width: 215px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .mousecost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box10 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 25.9vw;
+            width: 23vw;
+            top: 160vh;
+            display: flex;
+        }
+
+        .box10 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box10 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .ttimg {
+            height: 195px;
+            width: 215px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .ttcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box11 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 50.4vw;
+            width: 23vw;
+            top: 160vh;
+            display: flex;
+        }
+
+        .box11 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box11 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .headphonesimg {
+            height: 195px;
+            width: 215px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .headphonescost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .box12 {
+            border: 1px solid rgb(186, 186, 186);
+            height: 70vh;
+            position: absolute;
+            border-radius: 6px;
+            left: 75vw;
+            width: 23vw;
+            top: 160vh;
+            display: flex;
+        }
+
+        .box12 p {
+            position: absolute;
+            bottom: 140px;
+            left: 15px;
+            font-size: 125%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        .box12 span {
+            position: absolute;
+            bottom: 70px;
+            left: 15px;
+            font-size: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .volleyballimg {
+            height: 175px;
+            width: 250px;
+            position: absolute;
+            left: 40px;
+            /* overflow: visible   ; */
+            top: 14px;
+        }
+
+        .volleyballcost {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            font-size: 150%;
+        }
+
+        .boxgod {
+            height: 250vh;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tauko">
+        <img src="cart.png" class="cart">
+        <p class="cart_name">CharPangre</p>
+        <div class="nav">
+            <a id="underline">Home</a>
+
+            <div class="categories">
+                <a target="_blank">Categories &#9662;</a>
+                <div class="dropdown">
+                    <a href="Electronics.html">Electronics</a>
+                    <a href="mensclothing.html">Men's Clothing</a>
+                    <a href="spo">Sports & Outdoors</a>
+                </div>
+            </div>
+            <a href="Customerservice.html">Customer Service</a>
+            <a href="signup.html" target="_blank">Sign Up</a>
+        </div>
+        <div class="search">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="Search Icon" class="glass">
+            <input type="text" placeholder="Search your genre" class="search-input">
+        </div>
+        <a href="signin.html" target="_blank"><button class="sign-in-button">Sign In</button></a>
+    </div>
+
+
+
+    <div class="boxgod">
+
+        <div class="box1" data-genre="Men's Clothing">
+            <div class="genre">Men's Clothing</div>
+            <img src="bag.png" alt="" class="bagimg">
+            <p>Aesthetic School Bag <br></p>
+            <span>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the
+                padded sleeve, your everyda...</span>
+            <div class="bagcost">
+                $59.85
+            </div>
+            <button class="buy-button">Buy</button>
+        </div>
+    </div>
+
+
+
+    <div class="box2" data-genre="Men's Clothing">
+        <div class="genre">Men's Clothing</div>
+        <img src="watch.png" alt="" class="watchimg">
+        <p>Premium Aesthetic Men's Watch <br></p>
+        <span>This sleek and stylish watch combines timeless design with modern functionality. Featuring a durable
+            stainless steel case, a scratch-resistant sapphire cryst...</span>
+        <div class="watchcost">
+            $187.45
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+
+
+    <div class="box3 " data-genre="Electronics">
+        <div class="genre">Electronics</div>
+        <img src="lappy.png" alt="" class="lappyimg">
+        <p>Test Yourself With This Laptop <br></p>
+        <span> Unleash your gaming potential with this high-performance laptop, designed for the ultimate gaming
+            experience. Powered by a cutting-edge proce...</span>
+        <div class="lappycost">
+            $1250.99
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+    <div class="box4" data-genre="Men's Clothing">
+        <div class="genre">Men's Clothing</div>
+        <img src="kattu.png" alt="" class="kattuimg">
+        <p>Ultimate Summer Shorts <br></p>
+        <span> Step into summer with confidence in these premium shorts. Crafted from high-quality, breathable fabric,
+            these shorts offer unrivaled comfor...</span>
+        <div class="kattucost">
+            $25.99
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+
+    <div class="box5" data-genre="Men's Clothing">
+        <div class="genre">Men's Clothing</div>
+        <img src="tshirt.png" alt="" class="tshirtimg">
+        <p>Ultimate Summer T-shirt <br></p>
+        <span> Step into summer with confidence in these premium shorts. Crafted from high-quality, breathable fabric,
+            these shorts offer unrivaled comfor...</span>
+        <div class="tshirtcost">
+            $32.50
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+
+    <div class="box6" data-genre="Electronics">
+        <div class="genre">Electronics</div>
+        <img src="keyboard.png" alt="" class="keyboardimg">
+        <p>Mechanical Gaming Keyboard <br></p>
+        <span> Experience the pinnacle of typing and gaming with this mechanical keyboard. Equipped with customizable
+            RGB backlighting, it allo..</span>
+        <div class="kattucost">
+            $108.79
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+
+
+    <div class="box9" data-genre="Sports & Outdoors">
+        <div class="genre">Sports & Outdoors</div>
+        <img src="cricketbat.png" alt="" class="cricketbatimg">
+        <p>Unleash Your Inner Cricketer <br></p>
+        <span> Step up to the crease with confidence and control, armed with the PowerDrive X200 the bat that turns
+            every shot into a masterpi...</span>
+        <div class="cricketbatcost">
+            $45.20
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+
+
+    <div class="box11" data-genre="Sports & Outdoors">
+        <div class="genre">Sports & Outdoors</div>
+        <img src="football.png" alt="" class="footballimg">
+        <p>Elite Match Football <br></p>
+        <span>Take your game to the next level with this premium match football. Crafted for precision and control, it
+            features a reinforced outer lay...</span>
+        <div class="footballcost">
+            $300.25
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    </div>
+
+
+    <div class="box7" data-genre="Electronics">
+        <div class="genre">Electronics</div>
+        <img src="mouse.png" alt="" class="mouseimg">
+        <p> Tool for Effortless Control <br></p>
+        <span> Experience the next level of precision and performance with the PrecisionX Glide, the mouse designed for
+            gamers, desi...</span>
+        <div class="mousecost">
+            $180.50
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    </div>
+
+    <div class="box10" data-genre="Sports & Outdoors">
+        <div class="genre">Sports & Outdoors</div>
+        <img src="tt.png" alt="" class="ttimg">
+        <p>SpinMaster Elite : Table Tennis <br></p>
+        <span>Take control of every rally with the SpinMaster Elite, the table tennis bat engineered for champions.
+            Whether you're playing compet...</span>
+        <div class="ttcost">
+            $499
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    </div>
+
+
+
+
+    <div class="box12" data-genre="Electronics">
+        <div class="genre">Electronics</div>
+        <img src="headphones.png" alt="" class="headphonesimg">
+        <p> Immerse Yourself in Pure Sound <br></p>
+        <span>Elevate your audio experience with the SonicPulse Pro headphones, where cutting-edge technology meets
+            unparalleled comfort. Designed for au...</span>
+        <div class="headphonescost">
+            $250.99
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    </div>
+
+
+    <div class="box8" data-genre="Sports & Outdoors">
+        <div class="genre">Sports & Outdoors</div>
+        <img src="volleyball.png" alt="" class="volleyballimg">
+        <p>Spike Your Potential: Volleyball <br></p>
+        <span>Unleash your game with the VolleForce X1, the volleyball designed for those who demand excellence on the
+            court. Engineered with advanced aerody...</span>
+        <div class="volleyballcost">
+            $130.70
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    </div>
+
+</body>
+
+</html>
